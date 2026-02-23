@@ -10,14 +10,14 @@ html, body {
 }
 
 :root {
-  --navy: #2c4a52; /* Weathered sea-blue */
-  --slate: #8e9eab; /* Misty fog gray */
-  --sand: #f7f3ed; /* Soft beach sand */
-  --seafoam: #e0e9e9; /* Very light coastal water */
-  --sky: #f0f4f8; /* Pale morning sky */
+  --navy: #1a365d; /* Deep Atlantic Navy */
+  --slate: #4a6a8a; /* Moody Coastal Blue */
+  --sand: #f8fafc; /* Crisp White Sand */
+  --seafoam: #e2e8f0; /* Atlantic Mist */
+  --sky: #f1f5f9; /* Pale Morning Sky */
   --white: #ffffff;
-  --black: #1a2a30; /* Soft charcoal for text */
-  --accent: #d4a373; /* Natural rope/driftwood accent */
+  --black: #0f172a; /* Deep Night Sea */
+  --accent: #2563eb; /* Vibrant Ocean Blue */
   --font-serif: "Playfair Display", serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --header-height: 80px;
@@ -45,32 +45,62 @@ a {
 }
 
 .btn-primary {
-  display: inline-block;
-  background-color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  background-color: var(--accent);
   color: var(--white);
-  padding: 1rem 2rem;
+  padding: 1.1rem 2.5rem;
   text-transform: uppercase;
   letter-spacing: 0.15rem;
-  font-size: 0.75rem;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: 800;
   border: none;
   cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 4px;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent);
-  transform: translateY(-2px);
+  background-color: #1d4ed8; /* Slightly deeper on hover */
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary::after {
+  content: "→";
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover::after {
+  transform: translateX(4px);
 }
 
 .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 4rem;
+  padding: 0 5%;
+  width: 100%;
 }
 
 section {
-  padding: 8rem 0;
+  padding: 4rem 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 0;
+  }
+  
+  h1 { font-size: 2.5rem !important; }
+  h2 { font-size: 2.2rem !important; }
+  h3 { font-size: 1.8rem !important; }
 }
 
 /* Luxury Detail: Thin borders and refined spacing */

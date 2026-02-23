@@ -21,10 +21,25 @@ import Layout from '../layouts/Layout.astro';
 
 		<div class="hero-container">
 			<div class="hero-content-press">
-				<h1 class="press-title fade-in-up">
-					Classic Maine. <br/> 
-					<span>Modern Comfort.</span>
-				</h1>
+				<div class="hero-logo-wrapper fade-in-up">
+					<svg class="main-logo" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<!-- Architectural Frame -->
+						<rect x="20" y="20" width="200" height="200" stroke="white" stroke-width="2" />
+						<rect x="28" y="28" width="184" height="184" stroke="white" stroke-width="0.5" opacity="0.5" />
+						
+						<!-- Monogram CB with slightly more spacing -->
+						<text x="50" y="150" font-family="var(--font-serif)" font-size="110" fill="white" font-weight="500">C</text>
+						<text x="130" y="150" font-family="var(--font-serif)" font-size="110" fill="white" font-weight="300" opacity="0.9">B</text>
+						
+						<!-- Subtext within logo -->
+						<text x="120" y="195" text-anchor="middle" font-family="var(--font-sans)" font-size="9" fill="white" letter-spacing="0.3em" font-weight="700" text-transform="uppercase">CASCO BAY HOTEL</text>
+					</svg>
+				</div>
+				<div class="hero-slogan-box fade-in-up">
+					<div class="slogan-line">Classic Maine</div>
+					<div class="slogan-divider-line"></div>
+					<div class="slogan-line">Modern Comfort</div>
+				</div>
 			</div>
 
 			<div class="booking-widget-container fade-in">
@@ -42,17 +57,18 @@ import Layout from '../layouts/Layout.astro';
 						</div>
 					</div>
 					
-					<div class="occupancy-section">
-						<label>Occupancy</label>
-						<div class="custom-input-box">
-							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-							<span>1 Room, 1 Guest</span>
+					<div class="booking-details-row">
+						<div class="occupancy-section">
+							<div class="custom-input-box">
+								<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+								<span>1 Room, 1 Guest</span>
+							</div>
 						</div>
-					</div>
 
-					<div class="promo-section">
-						<div class="custom-input-box">
-							<span>Promo Code</span>
+						<div class="promo-section">
+							<div class="custom-input-box">
+								<span>Promo Code</span>
+							</div>
 						</div>
 					</div>
 
@@ -75,24 +91,32 @@ import Layout from '../layouts/Layout.astro';
 			<div class="gallery-grid">
 				<div class="gallery-item">
 					<div class="gallery-img-wrapper">
-						<div class="gallery-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.5);"></div>
-						<div class="gallery-img" style="background: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 70vh; position: relative; z-index: 2;"></div>
+						<div class="gallery-img" style="background: url('/assets/rooms/king.jpg') center/cover no-repeat; height: 50vh; position: relative; z-index: 2;"></div>
 					</div>
 					<div class="gallery-info">
-						<h3>Bay View Suite</h3>
-						<p>Starting from $289 / Night</p>
-						<a href="https://booking-portal-placeholder.com" class="btn-primary">Book Now</a>
+						<h3>Deluxe King</h3>
+						<p>1 King Bed • From $189 / Night</p>
+						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071" class="btn-primary">Book Now</a>
 					</div>
 				</div>
 				<div class="gallery-item">
 					<div class="gallery-img-wrapper">
-						<div class="gallery-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.5);"></div>
-						<div class="gallery-img" style="background: url('https://images.unsplash.com/photo-1595576508898-0ad5c879a061?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 70vh; position: relative; z-index: 2;"></div>
+						<div class="gallery-img" style="background: url('/assets/rooms/queen.jpg') center/cover no-repeat; height: 50vh; position: relative; z-index: 2;"></div>
 					</div>
 					<div class="gallery-info">
-						<h3>Coastal Loft</h3>
-						<p>Starting from $249 / Night</p>
-						<a href="https://booking-portal-placeholder.com" class="btn-primary">Book Now</a>
+						<h3>Deluxe Queen</h3>
+						<p>1 Queen Bed • From $159 / Night</p>
+						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071" class="btn-primary">Book Now</a>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-img-wrapper">
+						<div class="gallery-img" style="background: url('/assets/rooms/double.jpg') center/cover no-repeat; height: 50vh; position: relative; z-index: 2;"></div>
+					</div>
+					<div class="gallery-info">
+						<h3>2 Double Beds</h3>
+						<p>Double Bed Room • From $199 / Night</p>
+						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071" class="btn-primary">Book Now</a>
 					</div>
 				</div>
 			</div>
@@ -102,23 +126,65 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Section 3: Amenities -->
 	<section id="amenities" class="intro-modern">
 		<div class="container">
-			<div class="intro-grid-press">
-				<div class="intro-text-press">
-					<span class="eyebrow">The Experience</span>
-					<h2>Wellness & <br/> Amenities</h2>
-					<div class="section-divider"></div>
-					<p>Experience South Portland with a new perspective. From our state-of-the-art wellness center to curated local dining experiences, we've designed every detail to elevate your stay.</p>
-					<ul class="amenity-list">
-						<li>24-Hour Fitness Studio</li>
-						<li>Complimentary High-Speed Wi-Fi</li>
-						<li>Coastal Rooftop Lounge</li>
-						<li>Artisanal Breakfast & Coffee</li>
-					</ul>
+			<div class="section-header">
+				<span class="eyebrow">The Experience</span>
+				<h2>Elevated Amenities</h2>
+				<div class="section-divider"></div>
+			</div>
+			<div class="content-grid-standard">
+				<div class="content-text-side">
+					<p class="section-intro-text">Experience South Portland with a new perspective. We've curated every detail—from your morning coffee to your airport commute—to ensure a seamless and elevated stay.</p>
+					
+					<div class="amenities-container-refined">
+						<div class="amenity-group">
+							<h4>Travel & Convenience</h4>
+							<ul class="amenity-list">
+								<li>Free Airport Transportation</li>
+								<li>Complimentary Hot Breakfast</li>
+								<li>Outdoor Parking</li>
+								<li>100% Smoke Free Hotel</li>
+								<li>Express Check-In/Out</li>
+							</ul>
+						</div>
+						
+						<div class="amenity-group">
+							<h4>Stay & Comfort</h4>
+							<ul class="amenity-list">
+								<li>Premium Free Wi-Fi</li>
+								<li>Laundry Facilities</li>
+								<li>Sundry Shop</li>
+								<li>Elevator(s)</li>
+								<li>24-Hour Fitness Center</li>
+							</ul>
+						</div>
+
+						<div class="amenity-group">
+							<h4>Guest Rooms</h4>
+							<ul class="amenity-list">
+								<li>Microwave & Refrigerator</li>
+								<li>Coffee & Tea Maker</li>
+								<li>Flat Screen Smart TV</li>
+								<li>Iron & Ironing Board</li>
+								<li>Hairdryer</li>
+							</ul>
+						</div>
+
+						<div class="amenity-group">
+							<h4>Accessibility</h4>
+							<ul class="amenity-list">
+								<li>Accessible Hotel Features</li>
+								<li>Braille or Raised Signage</li>
+								<li>Business Center</li>
+								<li>Service Animals Allowed</li>
+								<li>Accessible Parking</li>
+							</ul>
+						</div>
+					</div>
 				</div>
-				<div class="intro-visual">
+				<div class="content-visual-side">
 					<div class="visual-img-wrapper">
 						<div class="visual-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.4);"></div>
-						<div class="visual-img" style="background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; height: 600px; position: relative; z-index: 2;"></div>
+						<div class="visual-img" style="background: url('/assets/amenities/lobby.png') center/cover no-repeat; height: 100%; min-height: 600px; position: relative; z-index: 2;"></div>
 					</div>
 				</div>
 			</div>
@@ -128,30 +194,35 @@ import Layout from '../layouts/Layout.astro';
 	<!-- Section 4: Location / Contact Us -->
 	<section id="location" class="location-section">
 		<div class="container">
-			<div class="location-grid">
-				<div class="location-map">
-					<div class="map-img-wrapper">
-						<div class="map-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.4);"></div>
-						<div class="map-img" style="background: url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 500px; position: relative; z-index: 2;"></div>
+			<div class="section-header">
+				<span class="eyebrow">Find Us</span>
+				<h2>Location & Contact</h2>
+				<div class="section-divider"></div>
+			</div>
+			<div class="content-grid-standard">
+				<div class="content-text-side">
+					<p class="section-intro-text">Conveniently located in South Portland, our hotel provides easy access to the Portland International Jetport, the Maine Mall, and the historic downtown area.</p>
+					<div class="location-details-refined">
+						<div class="contact-block">
+							<h4>Address</h4>
+							<p>80 John Roberts Rd, <br/> South Portland, ME 04106</p>
+						</div>
+						<div class="contact-block">
+							<h4>Phone</h4>
+							<p>(207) 558-4341</p>
+						</div>
+						<div class="contact-block">
+							<h4>Email</h4>
+							<p>reservations@cascobayhotel.com</p>
+						</div>
+						<a href="https://www.google.com/maps" class="btn-text-standard" target="_blank">Get Directions &rarr;</a>
 					</div>
 				</div>
-				<div class="location-details">
-					<span class="eyebrow">Find Us</span>
-					<h2>Contact & Location</h2>
-					<div class="section-divider"></div>
-					<div class="contact-block">
-						<h4>Address</h4>
-						<p>80 John Roberts Rd, <br/> South Portland, ME 04106</p>
+				<div class="content-visual-side">
+					<div class="map-img-wrapper">
+						<div class="map-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.4);"></div>
+						<div class="map-img" style="background: url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 100%; min-height: 500px; position: relative; z-index: 2;"></div>
 					</div>
-					<div class="contact-block">
-						<h4>Phone</h4>
-						<p>(207) 558-4341</p>
-					</div>
-					<div class="contact-block">
-						<h4>Email</h4>
-						<p>reservations@cascobayhotel.com</p>
-					</div>
-					<a href="https://www.google.com/maps" class="btn-text" target="_blank">Get Directions &rarr;</a>
 				</div>
 			</div>
 		</div>
@@ -226,47 +297,79 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.hero-content-press {
-		max-width: 800px;
+		max-width: 1000px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		text-align: left;
+		gap: 3rem;
 	}
 
-	.press-title {
-		font-family: var(--font-sans);
-		font-size: 5.5rem;
+	.hero-logo-wrapper {
+		width: 200px;
+		height: 200px;
+		flex-shrink: 0;
+	}
+
+	.main-logo {
+		width: 100%;
+		height: 100%;
+		filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+	}
+
+	.hero-slogan-box {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.8rem;
 		color: var(--white);
-		font-weight: 700;
-		line-height: 1.05;
-		letter-spacing: -0.02rem;
-	}
-
-	.press-title span {
-		font-family: var(--font-serif);
+		text-transform: uppercase;
+		letter-spacing: 0.5rem;
+		font-size: 1.15rem;
 		font-weight: 400;
-		font-style: italic;
+		opacity: 0.95;
+		border-left: 1px solid rgba(255,255,255,0.2);
+		padding-left: 3.5rem;
 	}
 
-	/* Refined Booking Widget Styles */
+	.slogan-line {
+		font-family: var(--font-serif);
+		white-space: nowrap;
+		line-height: 1.2;
+	}
+
+	.slogan-divider-line {
+		width: 40px;
+		height: 1px;
+		background-color: var(--accent);
+		opacity: 0.8;
+		margin: 0.2rem 0;
+	}
+
+	/* Consolidated Booking Widget Styles */
 	.booking-widget-container {
-		width: 400px;
+		width: 360px;
+		margin-left: 2rem;
 	}
 
 	.booking-card {
 		background: var(--white);
-		padding: 3rem 2.5rem;
+		padding: 2rem 1.8rem;
 		box-shadow: 0 40px 100px rgba(0,0,0,0.2);
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 1rem;
 	}
 
 	.date-row {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 1rem;
+		gap: 0.8rem;
 	}
 
 	.date-box {
 		background: #f8f8f8;
-		padding: 1.5rem 1rem;
+		padding: 1.2rem 0.8rem;
 		text-align: center;
 		transition: all 0.3s ease;
 		cursor: pointer;
@@ -280,83 +383,114 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.date-box .label {
-		font-size: 0.65rem;
+		font-size: 0.6rem;
 		text-transform: uppercase;
-		letter-spacing: 0.2rem;
+		letter-spacing: 0.15rem;
 		font-weight: 700;
 		color: var(--slate);
-		margin-bottom: 0.8rem;
+		margin-bottom: 0.6rem;
 		display: block;
 	}
 
 	.date-box .day {
 		font-family: var(--font-serif);
-		font-size: 3.5rem;
+		font-size: 2.5rem;
 		color: var(--navy);
 		line-height: 1;
-		margin-bottom: 0.2rem;
+		margin-bottom: 0.1rem;
 		display: block;
 	}
 
 	.date-box .month {
-		font-size: 0.75rem;
+		font-size: 0.65rem;
 		text-transform: uppercase;
-		letter-spacing: 0.15rem;
+		letter-spacing: 0.1rem;
 		font-weight: 700;
 		color: var(--navy);
 		display: block;
 	}
 
-	.occupancy-section label {
-		display: block;
-		font-size: 0.85rem;
-		font-weight: 700;
-		margin-bottom: 0.8rem;
-		color: var(--navy);
+	.booking-details-row {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		gap: 0.8rem;
 	}
 
 	.custom-input-box {
 		background: #f8f8f8;
-		padding: 1.2rem;
+		padding: 0.9rem 0.6rem;
 		display: flex;
 		align-items: center;
-		gap: 1rem;
-		font-size: 0.95rem;
+		gap: 0.5rem;
+		font-size: 0.75rem;
 		color: var(--navy);
 		font-weight: 500;
+		border: 1px solid transparent;
+		transition: all 0.3s ease;
+	}
+
+	.custom-input-box:hover {
+		background: var(--white);
+		border-color: var(--accent);
 	}
 
 	.btn-book-now {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
 		background: var(--accent);
 		color: var(--white);
 		padding: 1.2rem;
 		text-align: center;
 		font-size: 0.85rem;
 		font-weight: 800;
-		letter-spacing: 0.25rem;
+		letter-spacing: 0.2rem;
 		text-transform: uppercase;
 		margin-top: 0.5rem;
-		transition: all 0.3s ease;
+		transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		border-radius: 4px;
+		box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+		cursor: pointer;
 	}
 
 	.btn-book-now:hover {
-		background: var(--navy);
+		background: #1d4ed8;
+		transform: translateY(-4px) scale(1.04);
+		box-shadow: 0 10px 30px rgba(37, 99, 235, 0.4);
+	}
+
+	.btn-book-now::after {
+		content: "→";
+		font-size: 1.2rem;
+		transition: transform 0.3s ease;
+	}
+
+	.btn-book-now:hover::after {
+		transform: translateX(6px);
 	}
 
 	/* Section Styling */
 	.section-header {
 		text-align: center;
-		margin-bottom: 5rem;
+		margin-bottom: 3rem;
 	}
 
 	.section-header h2 {
-		font-size: 4rem;
-		margin-bottom: 1.5rem;
+		font-size: 3.5rem;
+		margin-bottom: 0.2rem;
+	}
+
+	.section-divider {
+		width: 60px;
+		height: 1px;
+		background-color: var(--accent);
+		margin: 1.5rem auto;
 	}
 
 	.gallery-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(3, 1fr);
 		gap: 2rem;
 	}
 
@@ -366,79 +500,182 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.gallery-info {
-		padding: 2.5rem 0;
+		padding: 1.5rem 0;
 	}
 
 	.gallery-info h3 {
-		font-size: 2.5rem;
-		margin-bottom: 0.5rem;
+		font-size: 2rem;
+		margin-bottom: 0.4rem;
 	}
 
 	.gallery-info p {
 		color: var(--slate);
-		margin-bottom: 1.5rem;
-		font-size: 1rem;
+		margin-bottom: 1.2rem;
+		font-size: 0.95rem;
 	}
 
-	/* Amenities List */
-	.amenity-list {
-		list-style: none;
-		margin-top: 2rem;
+	/* Standard Content Grid Layout */
+	.content-grid-standard {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 6rem;
+		align-items: stretch;
+	}
+
+	.content-text-side {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.section-intro-text {
+		font-size: 1.15rem;
+		color: var(--slate);
+		line-height: 1.8;
+		margin-bottom: 2rem;
+	}
+
+	.content-visual-side {
+		width: 100%;
+	}
+
+	/* Amenities Re-styling */
+	.amenities-container-refined {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.amenity-group h4 {
+		text-transform: uppercase;
+		font-size: 0.7rem;
+		letter-spacing: 0.15rem;
+		font-weight: 700;
+		color: var(--accent);
+		margin-bottom: 1rem;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+		padding-bottom: 0.4rem;
 	}
 
 	.amenity-list li {
-		padding: 0.8rem 0;
-		border-bottom: 1px solid rgba(0,0,0,0.05);
-		font-weight: 600;
+		padding: 0.4rem 0;
+		font-weight: 500;
 		color: var(--navy);
-		font-size: 1rem;
+		font-size: 0.85rem;
+		opacity: 0.8;
 	}
 
-	/* Location Grid */
-	.location-grid {
+	/* Location Details refined */
+	.location-details-refined {
 		display: grid;
-		grid-template-columns: 1.2fr 1fr;
-		gap: 6rem;
-		align-items: center;
-	}
-
-	.location-details h2 {
-		font-size: 3.5rem;
-		margin-bottom: 2rem;
-	}
-
-	.contact-block {
-		margin-bottom: 2rem;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
 	}
 
 	.contact-block h4 {
 		text-transform: uppercase;
-		font-size: 0.75rem;
-		letter-spacing: 0.2rem;
+		font-size: 0.7rem;
+		letter-spacing: 0.15rem;
 		font-weight: 700;
 		color: var(--accent);
 		margin-bottom: 0.5rem;
 	}
 
 	.contact-block p {
-		font-size: 1.15rem;
+		font-size: 1rem;
 		color: var(--navy);
 		line-height: 1.6;
 	}
 
-	.intro-grid-press {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 8rem;
-		align-items: center;
-		padding: 10rem 0;
+	.btn-text-standard {
+		grid-column: span 2;
+		display: inline-block;
+		margin-top: 1rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1rem;
+		font-size: 0.8rem;
+		color: var(--accent);
 	}
 
-	@media (max-width: 1200px) {
-		.hero-container { flex-direction: column; padding: 4rem; text-align: center; }
-		.booking-widget-container { width: 100%; margin-top: 4rem; }
-		.location-grid, .intro-grid-press, .gallery-grid { grid-template-columns: 1fr; gap: 4rem; }
-		.press-title { font-size: 3.5rem; }
+	@media (max-width: 1024px) {
+		.content-grid-standard {
+			grid-template-columns: 1fr;
+			gap: 4rem;
+		}
+		.amenities-container-refined, .location-details-refined {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.hero-container { 
+			flex-direction: column; 
+			padding: 8rem 2rem 4rem; 
+			text-align: center; 
+			justify-content: center;
+			gap: 4rem;
+		}
+		.hero-content-press { 
+			max-width: 100%; 
+			margin-bottom: 0;
+		}
+		.booking-widget-container { 
+			width: 100%; 
+			max-width: 500px;
+			margin-left: 0;
+		}
+		.hero-slogan-box {
+			padding-left: 2rem;
+			gap: 0.6rem;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.hero-content-press {
+			flex-direction: column;
+			gap: 1.5rem;
+		}
+		.hero-logo-wrapper {
+			width: 120px;
+			height: 120px;
+		}
+		.hero-slogan-box {
+			border-left: none;
+			padding-left: 0;
+			align-items: center;
+			text-align: center;
+			gap: 0.4rem;
+		}
+		.slogan-line {
+			font-size: 0.9rem;
+			letter-spacing: 0.3rem;
+		}
+		.slogan-divider-line {
+			width: 30px;
+		}
+		.booking-widget-container {
+			max-width: 100%;
+		}
+		.booking-card {
+			padding: 1.5rem 1.2rem;
+		}
+		.date-box .day {
+			font-size: 2rem;
+		}
+		.gallery-grid {
+			grid-template-columns: 1fr;
+		}
+		.intro-grid-press, .location-grid {
+			grid-template-columns: 1fr;
+			gap: 3rem;
+		}
+		.section-header h2 {
+			font-size: 2.5rem;
+		}
+		.visual-img, .map-img {
+			height: 400px !important;
+		}
 	}
 
 	/* Animations */
