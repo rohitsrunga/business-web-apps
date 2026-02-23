@@ -5,7 +5,7 @@ interface Props {
 }
 
 const { title, description = "Experience Casco Bay Hotel - Your Maine escape in South Portland." } = Astro.props;
-const isHome = Astro.url.pathname === '/';
+const isHome = Astro.url.pathname === '/business-web-apps/';
 import '../styles/global.css';
 ---
 
@@ -329,7 +329,7 @@ import '../styles/global.css';
 
 		<script>
 			const header = document.getElementById('main-header');
-			const isHome = window.location.pathname === '/';
+			const isHome = header && !header.classList.contains('scrolled');
 			
 			if (isHome) {
 				window.addEventListener('scroll', () => {
