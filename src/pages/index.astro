@@ -1,0 +1,472 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Casco Bay Hotel | A Modern Maine Getaway in South Portland">
+	<!-- Section 1: Main Landing Page -->
+	<section id="home" class="hero-press">
+		<!-- Hero Image/Video Background -->
+		<div class="hero-image-overlay" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(8px) brightness(0.7); opacity: 0.6;"></div>
+		<video
+			class="hero-video"
+			autoplay
+			muted
+			loop
+			playsinline
+			style="opacity: 0.8;"
+		>
+			<source src="https://player.vimeo.com/external/370338579.hd.mp4?s=cf68097b69324a3504ef5167098f9ef94902a76f&profile_id=170" type="video/mp4" />
+		</video>
+		<div class="hero-overlay-press"></div>
+
+		<div class="hero-container">
+			<div class="hero-content-press">
+				<h1 class="press-title fade-in-up">
+					Classic Maine. <br/> 
+					<span>Modern Comfort.</span>
+				</h1>
+			</div>
+
+			<div class="booking-widget-container fade-in">
+				<div class="booking-card">
+					<div class="date-row">
+						<div class="date-box">
+							<span class="label">Check In</span>
+							<span class="day">20</span>
+							<span class="month">Feb</span>
+						</div>
+						<div class="date-box">
+							<span class="label">Check Out</span>
+							<span class="day">27</span>
+							<span class="month">Feb</span>
+						</div>
+					</div>
+					
+					<div class="occupancy-section">
+						<label>Occupancy</label>
+						<div class="custom-input-box">
+							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+							<span>1 Room, 1 Guest</span>
+						</div>
+					</div>
+
+					<div class="promo-section">
+						<div class="custom-input-box">
+							<span>Promo Code</span>
+						</div>
+					</div>
+
+					<a href="https://booking-portal-placeholder.com" class="btn-book-now">
+						BOOK NOW
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 2: Rooms -->
+	<section id="rooms" class="rooms-gallery">
+		<div class="container">
+			<div class="section-header">
+				<span class="eyebrow">Accommodations</span>
+				<h2>Refined Suites</h2>
+				<div class="section-divider"></div>
+			</div>
+			<div class="gallery-grid">
+				<div class="gallery-item">
+					<div class="gallery-img-wrapper">
+						<div class="gallery-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.5);"></div>
+						<div class="gallery-img" style="background: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 70vh; position: relative; z-index: 2;"></div>
+					</div>
+					<div class="gallery-info">
+						<h3>Bay View Suite</h3>
+						<p>Starting from $289 / Night</p>
+						<a href="https://booking-portal-placeholder.com" class="btn-primary">Book Now</a>
+					</div>
+				</div>
+				<div class="gallery-item">
+					<div class="gallery-img-wrapper">
+						<div class="gallery-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.5);"></div>
+						<div class="gallery-img" style="background: url('https://images.unsplash.com/photo-1595576508898-0ad5c879a061?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 70vh; position: relative; z-index: 2;"></div>
+					</div>
+					<div class="gallery-info">
+						<h3>Coastal Loft</h3>
+						<p>Starting from $249 / Night</p>
+						<a href="https://booking-portal-placeholder.com" class="btn-primary">Book Now</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 3: Amenities -->
+	<section id="amenities" class="intro-modern">
+		<div class="container">
+			<div class="intro-grid-press">
+				<div class="intro-text-press">
+					<span class="eyebrow">The Experience</span>
+					<h2>Wellness & <br/> Amenities</h2>
+					<div class="section-divider"></div>
+					<p>Experience South Portland with a new perspective. From our state-of-the-art wellness center to curated local dining experiences, we've designed every detail to elevate your stay.</p>
+					<ul class="amenity-list">
+						<li>24-Hour Fitness Studio</li>
+						<li>Complimentary High-Speed Wi-Fi</li>
+						<li>Coastal Rooftop Lounge</li>
+						<li>Artisanal Breakfast & Coffee</li>
+					</ul>
+				</div>
+				<div class="intro-visual">
+					<div class="visual-img-wrapper">
+						<div class="visual-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.4);"></div>
+						<div class="visual-img" style="background: url('https://images.unsplash.com/photo-1540555700478-4be289fbecee?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat; height: 600px; position: relative; z-index: 2;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 4: Location / Contact Us -->
+	<section id="location" class="location-section">
+		<div class="container">
+			<div class="location-grid">
+				<div class="location-map">
+					<div class="map-img-wrapper">
+						<div class="map-img-bg" style="background: url('/main-hero-bg.png') center/cover no-repeat; filter: blur(4px) opacity(0.4);"></div>
+						<div class="map-img" style="background: url('https://images.unsplash.com/photo-1507041957456-9c397ce39c97?q=80&w=1974&auto=format&fit=crop') center/cover no-repeat; height: 500px; position: relative; z-index: 2;"></div>
+					</div>
+				</div>
+				<div class="location-details">
+					<span class="eyebrow">Find Us</span>
+					<h2>Contact & Location</h2>
+					<div class="section-divider"></div>
+					<div class="contact-block">
+						<h4>Address</h4>
+						<p>80 John Roberts Rd, <br/> South Portland, ME 04106</p>
+					</div>
+					<div class="contact-block">
+						<h4>Phone</h4>
+						<p>(207) 558-4341</p>
+					</div>
+					<div class="contact-block">
+						<h4>Email</h4>
+						<p>reservations@cascobayhotel.com</p>
+					</div>
+					<a href="https://www.google.com/maps" class="btn-text" target="_blank">Get Directions &rarr;</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style>
+	.hero-press {
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		max-width: 1600px;
+		padding: 0 8rem;
+		position: relative;
+		z-index: 10;
+	}
+
+	.hero-video {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+	}
+
+	.hero-image-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	.hero-overlay-press {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(to right, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%);
+		z-index: 2;
+	}
+
+	/* Wrapper styles for blurred background effect */
+	.gallery-img-wrapper, .visual-img-wrapper, .map-img-wrapper {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.gallery-img-bg, .visual-img-bg, .map-img-bg {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+
+	.hero-content-press {
+		max-width: 800px;
+	}
+
+	.press-title {
+		font-family: var(--font-sans);
+		font-size: 5.5rem;
+		color: var(--white);
+		font-weight: 700;
+		line-height: 1.05;
+		letter-spacing: -0.02rem;
+	}
+
+	.press-title span {
+		font-family: var(--font-serif);
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	/* Refined Booking Widget Styles */
+	.booking-widget-container {
+		width: 400px;
+	}
+
+	.booking-card {
+		background: var(--white);
+		padding: 3rem 2.5rem;
+		box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	.date-row {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+	}
+
+	.date-box {
+		background: #f8f8f8;
+		padding: 1.5rem 1rem;
+		text-align: center;
+		transition: all 0.3s ease;
+		cursor: pointer;
+		border: 1px solid transparent;
+	}
+
+	.date-box:hover {
+		background: var(--white);
+		border-color: var(--accent);
+		transform: translateY(-2px);
+	}
+
+	.date-box .label {
+		font-size: 0.65rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2rem;
+		font-weight: 700;
+		color: var(--slate);
+		margin-bottom: 0.8rem;
+		display: block;
+	}
+
+	.date-box .day {
+		font-family: var(--font-serif);
+		font-size: 3.5rem;
+		color: var(--navy);
+		line-height: 1;
+		margin-bottom: 0.2rem;
+		display: block;
+	}
+
+	.date-box .month {
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15rem;
+		font-weight: 700;
+		color: var(--navy);
+		display: block;
+	}
+
+	.occupancy-section label {
+		display: block;
+		font-size: 0.85rem;
+		font-weight: 700;
+		margin-bottom: 0.8rem;
+		color: var(--navy);
+	}
+
+	.custom-input-box {
+		background: #f8f8f8;
+		padding: 1.2rem;
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		font-size: 0.95rem;
+		color: var(--navy);
+		font-weight: 500;
+	}
+
+	.btn-book-now {
+		background: var(--accent);
+		color: var(--white);
+		padding: 1.2rem;
+		text-align: center;
+		font-size: 0.85rem;
+		font-weight: 800;
+		letter-spacing: 0.25rem;
+		text-transform: uppercase;
+		margin-top: 0.5rem;
+		transition: all 0.3s ease;
+	}
+
+	.btn-book-now:hover {
+		background: var(--navy);
+	}
+
+	/* Section Styling */
+	.section-header {
+		text-align: center;
+		margin-bottom: 5rem;
+	}
+
+	.section-header h2 {
+		font-size: 4rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.gallery-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.gallery-item {
+		position: relative;
+		overflow: hidden;
+	}
+
+	.gallery-info {
+		padding: 2.5rem 0;
+	}
+
+	.gallery-info h3 {
+		font-size: 2.5rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.gallery-info p {
+		color: var(--slate);
+		margin-bottom: 1.5rem;
+		font-size: 1rem;
+	}
+
+	/* Amenities List */
+	.amenity-list {
+		list-style: none;
+		margin-top: 2rem;
+	}
+
+	.amenity-list li {
+		padding: 0.8rem 0;
+		border-bottom: 1px solid rgba(0,0,0,0.05);
+		font-weight: 600;
+		color: var(--navy);
+		font-size: 1rem;
+	}
+
+	/* Location Grid */
+	.location-grid {
+		display: grid;
+		grid-template-columns: 1.2fr 1fr;
+		gap: 6rem;
+		align-items: center;
+	}
+
+	.location-details h2 {
+		font-size: 3.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.contact-block {
+		margin-bottom: 2rem;
+	}
+
+	.contact-block h4 {
+		text-transform: uppercase;
+		font-size: 0.75rem;
+		letter-spacing: 0.2rem;
+		font-weight: 700;
+		color: var(--accent);
+		margin-bottom: 0.5rem;
+	}
+
+	.contact-block p {
+		font-size: 1.15rem;
+		color: var(--navy);
+		line-height: 1.6;
+	}
+
+	.intro-grid-press {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 8rem;
+		align-items: center;
+		padding: 10rem 0;
+	}
+
+	@media (max-width: 1200px) {
+		.hero-container { flex-direction: column; padding: 4rem; text-align: center; }
+		.booking-widget-container { width: 100%; margin-top: 4rem; }
+		.location-grid, .intro-grid-press, .gallery-grid { grid-template-columns: 1fr; gap: 4rem; }
+		.press-title { font-size: 3.5rem; }
+	}
+
+	/* Animations */
+	@keyframes fadeInUp {
+		from {
+			opacity: 0;
+			transform: translateY(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.fade-in-up {
+		animation: fadeInUp 1s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+	}
+
+	.fade-in {
+		animation: fadeIn 1.5s ease forwards;
+	}
+</style>

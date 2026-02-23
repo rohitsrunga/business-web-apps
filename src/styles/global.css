@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+:root {
+  --navy: #2c4a52; /* Weathered sea-blue */
+  --slate: #8e9eab; /* Misty fog gray */
+  --sand: #f7f3ed; /* Soft beach sand */
+  --seafoam: #e0e9e9; /* Very light coastal water */
+  --sky: #f0f4f8; /* Pale morning sky */
+  --white: #ffffff;
+  --black: #1a2a30; /* Soft charcoal for text */
+  --accent: #d4a373; /* Natural rope/driftwood accent */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --header-height: 80px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.1;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--navy);
+  color: var(--white);
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+section {
+  padding: 8rem 0;
+}
+
+/* Luxury Detail: Thin borders and refined spacing */
+.section-divider {
+  width: 60px;
+  height: 1px;
+  background-color: var(--accent);
+  margin: 2rem 0;
+}
+
+/* Booking Bar - Direct influence from The Press Hotel */
+.booking-bar {
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  margin-top: -50px;
+  position: relative;
+  z-index: 20;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.booking-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.booking-field label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  color: var(--slate);
+}
+
+.booking-field span {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+.eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
