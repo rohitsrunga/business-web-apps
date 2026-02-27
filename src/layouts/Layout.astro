@@ -21,59 +21,83 @@ import '../styles/global.css';
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<header id="main-header" class={isHome ? "" : "scrolled"}>
-			<div class="header-container-press">
+			<div class="header-container">
 				<div class="header-left">
-					<a href="/business-web-apps/" class="logo-horizontal">
-						<span class="logo-main">Casco Bay Hotel</span>
+					<nav class="main-nav left-nav">
+						<a href="/business-web-apps/rooms">Rooms</a>
+						<a href={isHome ? "#amenities" : "/business-web-apps/#amenities"}>Experience</a>
+					</nav>
+				</div>
+				<div class="header-center">
+					<a href="/business-web-apps/" class="logo-full">
+						<span class="logo-text">Casco Bay Hotel</span>
 					</a>
-					<div class="header-contact-info">
-						<span>80 John Roberts Rd, South Portland, ME 04106</span>
-						<span class="dot">•</span>
-						<span>(207) 558-4341</span>
-					</div>
 				</div>
 				<div class="header-right">
-					<nav class="direct-nav">
-						<a href="/business-web-apps/rooms">Rooms</a>
-						<a href={isHome ? "#amenities" : "/business-web-apps/#amenities"}>Amenities</a>
+					<nav class="main-nav right-nav">
 						<a href={isHome ? "#location" : "/business-web-apps/#location"}>Location</a>
+						<div class="header-actions">
+							<button id="menu-toggle" class="menu-trigger" aria-label="Toggle Menu">
+								<span class="hamburger-line"></span>
+								<span class="hamburger-line"></span>
+							</button>
+							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071" class="btn-book">
+								Book Now
+							</a>
+						</div>
 					</nav>
-					<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071" class="btn-book-now-top">
-						Book Now
-					</a>
 				</div>
 			</div>
 		</header>
+
+		<nav id="full-menu" class="menu-dropdown">
+			<div class="menu-dropdown-content">
+				<div class="menu-links">
+					<a href="/business-web-apps/" class="menu-link">Home</a>
+					<a href="/business-web-apps/rooms" class="menu-link">The Suites</a>
+					<a href={isHome ? "#amenities" : "/business-web-apps/#amenities"} class="menu-link">Experience</a>
+					<a href={isHome ? "#location" : "/business-web-apps/#location"} class="menu-link">Location</a>
+				</div>
+				<div class="menu-dropdown-footer">
+					<p>(207) 558-4341</p>
+				</div>
+			</div>
+		</nav>
 
 		<main>
 			<slot />
 		</main>
 
 		<footer>
-			<div class="container footer-grid">
-				<div class="footer-brand">
-					<h3>Casco Bay Hotel</h3>
-					<div class="section-divider"></div>
-					<p>80 John Roberts Rd, South Portland, ME 04106</p>
-					<p>(207) 558-4341</p>
+			<div class="container footer-content">
+				<div class="footer-top">
+					<div class="footer-brand">
+						<h3 class="logo-text" style="color: var(--navy-deep); font-size: 1.5rem; letter-spacing: 0.2rem;">Casco Bay Hotel</h3>
+						<p class="address">80 John Roberts Rd, South Portland, ME 04106</p>
+						<p class="phone">(207) 558-4341</p>
+					</div>
+					<nav class="footer-nav">
+						<div class="footer-nav-col">
+							<h4>Explore</h4>
+							<a href="/business-web-apps/rooms">Rooms & Suites</a>
+							<a href="#amenities">The Experience</a>
+							<a href="#location">Location</a>
+						</div>
+						<div class="footer-nav-col">
+							<h4>Stay</h4>
+							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071">Reservations</a>
+							<a href="#">Privacy Policy</a>
+							<a href="#">Accessibility</a>
+						</div>
+					</nav>
 				</div>
-				<nav class="footer-nav">
-					<div class="nav-column">
-						<h4>Explore</h4>
-						<a href="business-web-apps/rooms">Rooms & Suites</a>
-						<a href="#amenities">Wellness & Dining</a>
-						<a href="#location">Area Guide</a>
-					</div>
-					<div class="nav-column">
-						<h4>Legal</h4>
-						<a href="/privacy">Privacy</a>
-						<a href="/terms">Terms</a>
-					</div>
-				</nav>
+				<div class="footer-bottom">
+					<p>&copy; {new Date().getFullYear()} Casco Bay Hotel. A South Portland Boutique Escape.</p>
+				</div>
 			</div>
 		</footer>
 
@@ -86,251 +110,292 @@ import '../styles/global.css';
 				top: 0;
 				left: 0;
 				width: 100%;
-				padding: 2rem 5%;
+				padding: 2rem 4rem;
 				z-index: 1000;
-				display: flex;
-				justify-content: center;
-				transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+				transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 			}
 
 			#main-header.scrolled {
-				background: var(--white);
-				padding: 1rem 5%;
-				box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+				background: transparent;
+				padding: 1.5rem 4rem;
 			}
 
-			.header-container-press {
-				display: flex;
+			.header-container {
+				display: grid;
+				grid-template-columns: 1fr auto 1fr;
 				align-items: center;
-				justify-content: space-between;
 				width: 100%;
-				max-width: 1400px;
+				max-width: 1600px;
+				margin: 0 auto;
+				position: relative;
 			}
 
-			.header-left {
-				display: flex;
-				align-items: center;
-				gap: 1.5rem;
-			}
-
-			.logo-horizontal {
+			/* Logo Styles */
+			.logo-text {
+				font-family: 'Cinzel', serif;
+				font-size: 1.6rem;
+				letter-spacing: 0.3rem;
+				text-transform: uppercase;
+				font-weight: 400;
 				color: var(--white);
-				transition: color 0.4s ease;
-				flex-shrink: 0;
+				transition: all 0.6s ease;
+				white-space: nowrap;
 			}
 
-			.logo-main {
-				font-family: var(--font-serif);
-				font-size: 1.5rem;
-				text-transform: uppercase;
-				letter-spacing: 0.2rem;
-				font-weight: 500;
-				line-height: 1;
+			#main-header.scrolled .logo-full {
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-10px);
 			}
 
-			.header-contact-info {
-				display: flex;
-				align-items: center;
-				gap: 0.8rem;
-				color: rgba(255,255,255,0.6);
-				font-size: 0.55rem;
-				text-transform: uppercase;
-				letter-spacing: 0.1rem;
-				font-weight: 500;
-				border-left: 1px solid rgba(255,255,255,0.15);
-				padding-left: 1.5rem;
-				margin-top: 0.2rem;
-				height: 1rem;
-				transition: all 0.4s ease;
-			}
-
-			#main-header.scrolled .header-contact-info {
-				color: var(--slate);
-				border-left-color: rgba(0,0,0,0.1);
-			}
-
-			.dot {
-				color: var(--accent);
-			}
-
-			#main-header.scrolled .logo-horizontal {
-				color: var(--navy);
-			}
-
-			.header-right {
+			.header-actions {
 				display: flex;
 				align-items: center;
 				gap: 2rem;
 			}
 
-			.direct-nav {
-				display: flex;
-				gap: 1.5rem;
+			/* Hamburger Trigger */
+			.menu-trigger {
+				display: none; /* Hidden by default */
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				flex-direction: column;
+				gap: 6px;
+				width: 25px;
+				padding: 0;
+				z-index: 1100;
+				order: -1; /* Ensure it stays left of the Book Now button */
 			}
 
-			.direct-nav a {
+			#main-header.scrolled .menu-trigger {
+				display: flex;
+			}
+
+			.hamburger-line {
+				display: block;
+				width: 100%;
+				height: 2px;
+				background-color: var(--white);
+				transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			#main-header.scrolled .hamburger-line {
+				background-color: var(--accent);
+			}
+
+			body.menu-open .hamburger-line:first-child {
+				transform: translateY(4px) rotate(45deg);
+				background-color: var(--navy-deep) !important;
+			}
+
+			body.menu-open .hamburger-line:last-child {
+				transform: translateY(-4px) rotate(-45deg);
+				background-color: var(--navy-deep) !important;
+			}
+
+			/* Menu Dropdown */
+			.menu-dropdown {
+				position: fixed;
+				top: 100px;
+				right: 4rem;
+				width: 320px;
+				background: var(--white);
+				z-index: 1050;
+				box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+				border: 1px solid var(--border-blue);
+				padding: 3rem;
+				opacity: 0;
+				visibility: hidden;
+				transform: translateY(-20px);
+				transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			body.menu-open .menu-dropdown {
+				opacity: 1;
+				visibility: visible;
+				transform: translateY(0);
+			}
+
+			.menu-links {
+				display: flex;
+				flex-direction: column;
+				gap: 1.5rem;
+				margin-bottom: 3rem;
+			}
+
+			.menu-link {
+				font-family: 'Cinzel', serif;
+				font-size: 1.4rem;
 				text-transform: uppercase;
-				font-size: 0.7rem;
-				letter-spacing: 0.15rem;
+				letter-spacing: 0.2rem;
+				color: var(--navy-deep);
+				transition: all 0.3s ease;
+			}
+
+			.menu-link:hover {
+				color: var(--accent);
+				padding-left: 10px;
+			}
+
+			.menu-dropdown-footer {
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				color: var(--text-muted);
+				border-top: 1px solid var(--border-blue);
+				padding-top: 2rem;
+			}
+
+			/* Navigation Visibility */
+			.main-nav {
+				display: flex;
+				align-items: center;
+				gap: 3rem;
+				transition: all 0.4s ease;
+			}
+
+			.left-nav { justify-content: flex-start; }
+			.right-nav { justify-content: flex-end; }
+
+			#main-header.scrolled .left-nav,
+			#main-header.scrolled .right-nav a:not(.btn-book) {
+				opacity: 0;
+				visibility: hidden;
+				pointer-events: none;
+			}
+
+			.main-nav a {
+				text-transform: uppercase;
+				font-size: 0.65rem;
+				letter-spacing: 0.2rem;
 				font-weight: 700;
 				color: var(--white);
-				transition: color 0.3s ease;
+				transition: all 0.3s ease;
+				white-space: nowrap;
 			}
 
-			#main-header.scrolled .direct-nav a {
-				color: var(--navy);
-			}
-
-			.direct-nav a:hover {
+			#main-header.scrolled .main-nav a:hover {
 				color: var(--accent);
 			}
 
-			.btn-book-now-top {
-				display: inline-flex;
-				align-items: center;
-				justify-content: center;
-				gap: 0.6rem;
-				background: var(--white);
-				color: var(--navy);
-				padding: 0.8rem 1.8rem;
-				font-size: 0.75rem;
-				letter-spacing: 0.15rem;
+			.btn-book {
+				padding: 0.8rem 2rem;
+				border: 1px solid var(--white);
+				background: transparent;
+				color: var(--white) !important;
 				font-weight: 800;
 				text-transform: uppercase;
-				box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-				transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-				flex-shrink: 0;
-				border-radius: 4px;
+				letter-spacing: 0.15rem;
+				font-size: 0.65rem;
+				transition: all 0.4s ease;
 			}
 
-			#main-header.scrolled .btn-book-now-top {
+			#main-header.scrolled .btn-book {
 				background: var(--accent);
-				color: var(--white);
-				box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+				border-color: var(--accent);
+				box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
 			}
 
-			.btn-book-now-top:hover {
-				transform: translateY(-3px) scale(1.05);
-				box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-				background: var(--white);
-				color: var(--accent);
+			.btn-book:hover {
+				background: var(--white) !important;
+				color: var(--accent) !important;
+				border-color: var(--white);
 			}
 
-			#main-header.scrolled .btn-book-now-top:hover {
-				background: #1d4ed8;
-				color: var(--white);
-				box-shadow: 0 12px 40px rgba(37, 99, 235, 0.4);
-			}
-
-			.btn-book-now-top::after {
-				content: "→";
-				font-size: 1.1rem;
-				transition: transform 0.3s ease;
-			}
-
-			.btn-book-now-top:hover::after {
-				transform: translateX(4px);
+			#main-header.scrolled .btn-book:hover {
+				background: #1d4ed8 !important;
+				border-color: #1d4ed8;
+				transform: translateY(-2px);
 			}
 
 			/* Footer */
 			footer {
-				background-color: var(--navy);
-				color: var(--white);
-				padding: 8rem 0;
+				background-color: var(--cream-muted);
+				padding: 10rem 0 5rem;
+				color: var(--text-main);
+				border-top: 1px solid var(--border-light);
 			}
 
-			.footer-grid {
-				display: grid;
-				grid-template-columns: 1fr 1fr;
-				gap: 8rem;
+			.footer-top {
+				display: flex;
+				justify-content: space-between;
+				margin-bottom: 8rem;
 			}
 
-			footer h3 {
-				color: var(--accent);
-				font-size: 2.2rem;
-				margin-bottom: 0.5rem;
-			}
-
-			footer h4 {
-				color: var(--white);
-				font-size: 0.75rem;
-				text-transform: uppercase;
-				letter-spacing: 0.2rem;
+			.footer-brand .logo-text {
+				color: var(--text-main);
+				display: block;
 				margin-bottom: 2rem;
 			}
 
 			.footer-brand p {
-				color: rgba(255,255,255,0.7);
-				font-size: 0.95rem;
+				color: var(--text-muted);
+				font-size: 0.9rem;
+				margin-bottom: 0.5rem;
 			}
 
 			.footer-nav {
 				display: flex;
-				gap: 5rem;
+				gap: 8rem;
 			}
 
-			.nav-column a {
-				display: block;
-				margin-bottom: 1rem;
-				font-size: 0.85rem;
-				color: rgba(255,255,255,0.6);
+			.footer-nav-col h4 {
 				text-transform: uppercase;
-				letter-spacing: 0.1rem;
-			}
-
-			.nav-column a:hover {
+				font-size: 0.7rem;
+				letter-spacing: 0.2rem;
+				margin-bottom: 2.5rem;
 				color: var(--accent);
 			}
 
+			.footer-nav-col a {
+				display: block;
+				margin-bottom: 1.2rem;
+				font-size: 0.85rem;
+				color: var(--text-main);
+				font-weight: 500;
+			}
+
+			.footer-nav-col a:hover {
+				color: var(--accent);
+			}
+
+			.footer-bottom {
+				padding-top: 3rem;
+				border-top: 1px solid var(--border-light);
+				font-size: 0.75rem;
+				color: var(--text-muted);
+				text-transform: uppercase;
+				letter-spacing: 0.1rem;
+				text-align: center;
+			}
+
 			@media (max-width: 1024px) {
-				#main-header {
-					padding: 1.5rem 5%;
-				}
-				.logo-main {
-					font-size: 1.3rem;
-				}
-				.direct-nav {
-					display: none;
-				}
-				.header-right {
-					gap: 2rem;
-				}
-				.footer-grid {
-					grid-template-columns: 1fr;
-					gap: 4rem;
-				}
+				#main-header { padding: 2rem; }
+				#main-header.scrolled { padding: 1rem 2rem; }
+				.main-nav { gap: 1.5rem; }
+				.footer-top { flex-direction: column; gap: 4rem; }
+				.footer-nav { gap: 4rem; flex-wrap: wrap; }
 			}
 
 			@media (max-width: 768px) {
-				.header-contact-info {
+				.header-left, .header-right .main-nav a:not(.btn-book) {
 					display: none;
 				}
-				.logo-main {
-					font-size: 1.1rem;
-					letter-spacing: 0.1rem;
+				.header-container {
+					grid-template-columns: 1fr auto;
 				}
-				.btn-book-now-top {
-					padding: 0.6rem 1.2rem;
-					font-size: 0.65rem;
-					gap: 0.4rem;
-				}
-				.btn-book-now-top::after {
-					font-size: 0.9rem;
-				}
-				#main-header {
-					background: rgba(0,0,0,0.1);
-					backdrop-filter: blur(5px);
-				}
-				#main-header.scrolled {
-					background: var(--white);
-				}
+				.logo-text { font-size: 1.4rem; }
 			}
 		</style>
 
 		<script>
 			const header = document.getElementById('main-header');
+			const menuToggle = document.getElementById('menu-toggle');
+			const menuLinks = document.querySelectorAll('.menu-link');
 			const isHome = header && !header.classList.contains('scrolled');
 			
+			// Scroll Logic
 			if (isHome) {
 				window.addEventListener('scroll', () => {
 					if (window.scrollY > 50) {
@@ -342,6 +407,18 @@ import '../styles/global.css';
 			} else {
 				header?.classList.add('scrolled');
 			}
+
+			// Menu Toggle Logic
+			menuToggle?.addEventListener('click', () => {
+				document.body.classList.toggle('menu-open');
+			});
+
+			// Close menu when link is clicked
+			menuLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					document.body.classList.remove('menu-open');
+				});
+			});
 		</script>
 	</body>
 </html>
