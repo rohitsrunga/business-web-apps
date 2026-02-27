@@ -1132,4 +1132,78 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
+	@media (max-width: 768px) {
+		.hero-press {
+			height: auto;
+			min-height: 100vh;
+			padding: 6rem 0 !important;
+		}
+
+		.hero-container {
+			flex-direction: column;
+			padding: 0 1.5rem;
+			text-align: center;
+			gap: 3rem;
+		}
+
+		.hero-content-press {
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.hero-logo-wrapper {
+			width: 140px;
+			height: 140px;
+		}
+
+		.hero-slogan-box {
+			border-left: none;
+			border-top: 1px solid rgba(255,255,255,0.3);
+			padding-left: 0;
+			padding-top: 2rem;
+			letter-spacing: 0.3rem;
+			font-size: 1rem;
+		}
+
+		.booking-widget-container {
+			width: 100%;
+			max-width: 420px;
+		}
+
+		.booking-card {
+			padding: 1.2rem;
+		}
+
+		.booking-details-row {
+			grid-template-columns: 1fr;
+			gap: 0.5rem;
+		}
+
+		.location-map-style {
+			padding: 4rem 0;
+			background-position: center;
+		}
+
+		.location-map-info {
+			padding: 2rem 1.5rem;
+			max-width: 100%;
+		}
+
+		.location-ctas-map {
+			flex-direction: column;
+			gap: 1.5rem;
+			align-items: center;
+		}
+
+		.location-text-content {
+			text-align: center;
+		}
+
+		.location-contact-minimal strong {
+			width: auto;
+			display: inline;
+			margin-right: 0.5rem;
+		}
+	}
+
 </style>
