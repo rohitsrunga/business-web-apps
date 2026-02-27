@@ -901,14 +901,10 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
-	.amenities-magazine {
-		padding-bottom: 6rem;
-	}
-
 	.amenities-magazine-layout {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: 6rem;
+		grid-template-columns: 0.8fr 1.2fr;
+		gap: 8rem;
 		align-items: center;
 	}
 
@@ -938,7 +934,7 @@ import Layout from '../layouts/Layout.astro';
 	.amenity-grid-main {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 3rem;
+		gap: 4rem;
 	}
 
 	.amenity-caption-col {
@@ -969,10 +965,10 @@ import Layout from '../layouts/Layout.astro';
 
 	.location-map-style {
 		background-size: cover;
-		background-position: center; 
+		background-position: 80% center; 
 		background-repeat: no-repeat;
 		position: relative;
-		padding: 0 0 10rem;
+		padding: 6rem 0 8rem; /* Slightly more top padding to contain the info box */
 		color: var(--text-main);
 		background-color: #fff;
 	}
@@ -985,19 +981,17 @@ import Layout from '../layouts/Layout.astro';
 	.location-map-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
-		gap: 6rem;
-		align-items: flex-start;
+
+		align-items: flex-start; /* Align to top to prevent vertical stretching issues */
 	}
 
 	.location-map-info {
-		width: 100%;
-		background: #ffffff;
-		padding: 3.5rem;
-		box-shadow: 0 30px 60px rgba(0,0,0,0.1);
-		border: 1px solid rgba(0,0,0,0.05);
-		margin-top: -5rem;
-		z-index: 10;
-		position: relative;
+		max-width: 480px;
+		background: rgba(255, 255, 255, 0.92);
+		padding: 3rem;
+		box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+		backdrop-filter: blur(8px);
+		border: 1px solid rgba(255,255,255,0.6);
 	}
 
 	.location-hotel-visual {
