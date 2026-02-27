@@ -5,7 +5,6 @@
 }
 
 html, body {
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -96,7 +95,7 @@ a {
 }
 
 section {
-  padding: 10rem 0;
+  padding: 6rem 0; /* Reduced from 10rem to be more efficient */
   width: 100%;
 }
 
