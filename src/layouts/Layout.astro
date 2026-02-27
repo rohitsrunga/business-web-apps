@@ -58,11 +58,14 @@ import '../styles/global.css';
 			<div class="menu-dropdown-content">
 				<div class="menu-links">
 					<a href="/business-web-apps/" class="menu-link">Home</a>
-					<a href="/business-web-apps/rooms" class="menu-link">Rooms</a>
+					<!-- <a href="/business-web-apps/rooms" class="menu-link">Rooms</a> -->
+					<a href={isHome ? "#rooms" : "/business-web-apps/#rooms"} class="menu-link">Rooms</a>
 					<a href={isHome ? "#amenities" : "/business-web-apps/#amenities"} class="menu-link">Amenities</a>
 					<a href={isHome ? "#location" : "/business-web-apps/#location"} class="menu-link">Location</a>
 				</div>
 				<div class="menu-dropdown-footer">
+					<p>80 John Roberts Rd, South Portland, ME 04106</p>
+					<p>-</p>
 					<p>(207) 558-4341</p>
 				</div>
 			</div>
