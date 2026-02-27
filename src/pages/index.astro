@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Casco Bay Hotel | A Modern Maine Getaway in South Portland">
+<Layout title="Casco Bay Hotel | A Modern Maine Getaway">
 	<!-- Section 1: Main Landing Page -->
 	<section id="home" class="hero-press">
 		<!-- Hero Image Placeholder (Fades out when video is ready) -->
@@ -194,7 +194,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="experience-content">
 					<span class="eyebrow-dash">About Us</span>
 					<h2 class="navy-text">Unwind in Style <span class="serif-italic">with</span> <br/> <strong>Casco Bay Hotel</strong></h2>
-					<p>Located in South Portland, our hotel captures the moody elegance of the Atlantic coast. We've created a refuge that celebrates local character through refined design and authentic Maine hospitality.</p>
+					<p>Located minutes away from downtown Portland, our hotel captures the moody elegance of the Atlantic coast. We've created a refuge that celebrates local character through refined design and authentic Maine hospitality.</p>
 					<p>Every detail has been thoughtfully curated to ensure your stay is as restorative as the rugged beauty of the Maine coastline itself.</p>
 					<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary">Book Now</a>
 				</div>
@@ -276,7 +276,7 @@ import Layout from '../layouts/Layout.astro';
 							<span>2 Double Beds</span>
 							<span>400 SQFT</span>
 						</div>
-						<p>Ample space and dual-bed configurations make this the ideal sanctuary for families exploring the South Portland area.</p>
+						<p>Ample space and dual-bed configurations make this the ideal stay for families exploring the greater Portland area.</p>
 						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary-suites">Book Your Stay</a>
 					</div>
 				</div>
@@ -429,8 +429,8 @@ import Layout from '../layouts/Layout.astro';
 						<img src={`${import.meta.env.BASE_URL}assets/location/building.jpg`} alt="Casco Bay Hotel Building" />
 					</div>
 					<div class="location-text-content">
-						<h2>SOUTH PORTLAND AT YOUR <br/> FINGERTIPS</h2>
-						<p>Perfectly situated in South Portland, our hotel provides effortless access to the Portland International Jetport, the historic Old Port district, and the stunning Maine coastline. Discover what true convenience looks like.</p>
+						<h2>THE BEST OF PORTLAND AT YOUR FINGERTIPS</h2>
+						<p>Perfectly situated in the greater Portland area, our hotel provides effortless access to the Portland International Jetport, the historic Old Port district, and the stunning Maine coastline. Discover what true convenience looks like.</p>
 						
 						<div class="location-contact-minimal">
 							<p>80 John Roberts Rd, South Portland, ME 04106</p>
@@ -1004,7 +1004,8 @@ import Layout from '../layouts/Layout.astro';
 		.amenities-magazine-layout { grid-template-columns: 1fr; gap: 4rem; }
 		.visual-main { height: 400px; }
 		.visual-accent { display: none; }
-		.amenity-grid-main { grid-template-columns: 1fr; gap: 2rem; }
+		.amenity-grid-main { grid-template-columns: repeat(2, 1fr); gap: 3rem 1.5rem; }
+		.amenity-caption-col, .amenity-cta-col { grid-column: span 2; }
 		.amenity-cta-col { margin-bottom: 2rem; }
 	}
 
