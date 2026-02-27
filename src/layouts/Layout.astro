@@ -5,7 +5,7 @@ interface Props {
 }
 
 const { title, description = "Experience Casco Bay Hotel - Your Maine escape in South Portland." } = Astro.props;
-const isHome = Astro.url.pathname === '/business-web-apps/';
+const isHome = Astro.url.pathname.replace(/\/$/, '') === '/business-web-apps';
 import '../styles/global.css';
 ---
 
@@ -374,13 +374,64 @@ import '../styles/global.css';
 			}
 
 			@media (max-width: 768px) {
-				.header-left, .header-right .main-nav a:not(.btn-book) {
+				#main-header { 
+					padding: 1.5rem 1.5rem; 
+				}
+
+				.header-container {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				.header-left {
 					display: none;
 				}
-				.header-container {
-					grid-template-columns: 1fr auto;
+				
+				.header-center {
+					display: flex;
+					justify-content: center;
 				}
-				.logo-text { font-size: 1.4rem; }
+
+				.header-right {
+					position: absolute;
+					right: 0;
+					display: none;
+				}
+
+				#main-header.scrolled .header-right {
+					display: flex;
+					padding-right: 1.5rem;
+				}
+
+				.header-right .main-nav a:not(.btn-book) {
+					display: none;
+				}
+
+				.logo-text { 
+					font-size: 1.2rem; 
+					letter-spacing: 0.2rem;
+				}
+
+				#main-header.scrolled .logo-full {
+					display: none;
+				}
+
+				.header-actions {
+					gap: 1rem;
+				}
+
+				.btn-book {
+					padding: 0.7rem 1.4rem;
+					font-size: 0.6rem;
+				}
+
+				.menu-dropdown {
+					top: 70px;
+					right: 1.5rem;
+					width: calc(100% - 3rem);
+					padding: 2rem;
+				}
 			}
 		</style>
 
