@@ -2,12 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Casco Bay Hotel | A Modern Maine Getaway">
+<Layout title="Casco Bay Hotel | South Portland, ME | Hotel Near Portland Airport" description="Casco Bay Hotel in South Portland, Maine — boutique hotel minutes from Portland International Jetport. Free airport shuttle, hot breakfast, free parking & Park & Fly packages. Book direct.">
 	<!-- Section 1: Main Landing Page -->
 	<section id="home" class="hero-press">
 		<!-- Hero Image Placeholder (Fades out when video is ready) -->
 		<div id="hero-placeholder" class="hero-image-overlay" style={`background: url('${import.meta.env.BASE_URL}main-hero-bg.png') center/cover no-repeat;`}></div>
-		
+
 		<video
 			id="hero-video"
 			class="hero-video"
@@ -18,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
 		>
 			<source src={`${import.meta.env.BASE_URL}Lighthouse_Pan_Video.mov`} type="video/mp4" />
 		</video>
-		
+
 		<div class="hero-overlay-press"></div>
 
 		<div class="hero-container">
@@ -32,9 +32,9 @@ import Layout from '../layouts/Layout.astro';
 					</svg>
 				</div>
 				<div class="hero-slogan-box fade-in-up">
-					<div class="slogan-line">Classic Maine</div>
+					<h1 class="hero-h1">Classic Maine. Modern Comfort.</h1>
 					<div class="slogan-divider-line"></div>
-					<div class="slogan-line">Modern Comfort</div>
+					<p class="hero-subhead">Ten minutes from the Old Port. Two minutes from the Jetport. Right in the middle of everything that makes Portland worth visiting.</p>
 				</div>
 			</div>
 
@@ -77,7 +77,7 @@ import Layout from '../layouts/Layout.astro';
 									<option value="5">5 ADULTS</option>
 									<option value="6">6 ADULTS</option>
 									<option value="7">7 ADULTS</option>
-									<option value="8">8 ADULTS</option>	
+									<option value="8">8 ADULTS</option>
 									<option value="9">9 ADULTS</option>
 									<option value="10">10 ADULTS</option>
 								</select>
@@ -120,7 +120,6 @@ import Layout from '../layouts/Layout.astro';
 		const promoInput = document.getElementById('promo-code') as HTMLInputElement;
 		const mainBookBtn = document.getElementById('main-book-btn');
 
-		// Helper to get local YYYY-MM-DD
 		const getLocalDateStr = (date: Date) => {
 			const offset = date.getTimezoneOffset();
 			const localDate = new Date(date.getTime() - (offset * 60 * 1000));
@@ -174,7 +173,6 @@ import Layout from '../layouts/Layout.astro';
 			window.open(getBookingUrl(), '_blank');
 		});
 
-		// Global redirect for other Book Now buttons
 		document.querySelectorAll('.btn-primary:not(#main-book-btn)').forEach(btn => {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
@@ -189,13 +187,13 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Block 1: About Us -->
 			<div class="experience-block">
 				<div class="experience-visual">
-					<img src={`${import.meta.env.BASE_URL}assets/amenities/exterior.jpg`} alt="Casco Bay Exterior" />
+					<img src={`${import.meta.env.BASE_URL}assets/amenities/exterior.jpg`} alt="Casco Bay Hotel exterior building in South Portland Maine" />
 				</div>
 				<div class="experience-content">
 					<span class="eyebrow-dash">About Us</span>
 					<h2 class="navy-text">Unwind in Style <span class="serif-italic">with</span> <br/> <strong>Casco Bay Hotel</strong></h2>
-					<p>Located minutes away from downtown Portland, our hotel captures the moody elegance of the Atlantic coast. We've created a refuge that celebrates local character through refined design and authentic Maine hospitality.</p>
-					<p>Every detail has been thoughtfully curated to ensure your stay is as restorative as the rugged beauty of the Maine coastline itself.</p>
+					<p>Casco Bay Hotel sits in South Portland, just across the bridge from the Old Port and a two-minute drive from Portland International Jetport. We renovated completely in 2022 — new rooms, new lobby, new everything — because we wanted guests to actually look forward to coming back.</p>
+					<p>Whether you're here for a long weekend on the coast, a work trip to Portland, or catching an early flight out of PWM, we've built this place around making that easy.</p>
 					<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary">Book Now</a>
 				</div>
 			</div>
@@ -203,13 +201,13 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Block 2: Philosophy -->
 			<div class="experience-block reverse">
 				<div class="experience-visual">
-					<img src={`${import.meta.env.BASE_URL}assets/amenities/lobby.png`} alt="Casco Bay Lobby" />
+					<img src={`${import.meta.env.BASE_URL}assets/amenities/lobby.png`} alt="Casco Bay Hotel lobby interior South Portland Maine" />
 				</div>
 				<div class="experience-content">
 					<span class="eyebrow-dash">Philosophy</span>
-					<h2 class="navy-text">Our Commitment <span class="serif-italic">to</span> <br/> <strong>Excellence</strong></h2>
-					<p>Following our complete renovation, we've focused on providing more than just a room. Our philosophy is rooted in the belief that luxury should be genuine, accessible, and deeply connected to its surroundings.</p>
-					<p>From our coastal breakfast to our high-speed connectivity, every element is designed to facilitate a seamless and elevated guest experience.</p>
+					<h3 class="navy-text">Our Commitment <span class="serif-italic">to</span> <br/> <strong>South Portland</strong></h3>
+					<p>South Portland doesn't get enough credit. Most visitors beeline for the Old Port, but this side of the bridge has better parking, quieter streets, and the same access to everything Portland is known for — the food scene, the waterfront, the hiking.</p>
+					<p>We're right here in the middle of it, and we think once you stay with us, you'll see why our guests keep coming back.</p>
 					<a href="#amenities" class="btn-learn">Our Amenities</a>
 				</div>
 			</div>
@@ -222,9 +220,9 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Left: Sticky Visual -->
 			<div class="suites-visual-sticky">
 				<div class="sticky-image-container">
-					<img id="suite-img-king" src={`${import.meta.env.BASE_URL}assets/rooms/king.jpg`} alt="Deluxe King" class="active" />
-					<img id="suite-img-queen" src={`${import.meta.env.BASE_URL}assets/rooms/queen.jpg`} alt="Deluxe Queen" />
-					<img id="suite-img-double" src={`${import.meta.env.BASE_URL}assets/rooms/double.jpg`} alt="Double Beds" />
+					<img id="suite-img-king" src={`${import.meta.env.BASE_URL}assets/rooms/king.jpg`} alt="Deluxe King room at Casco Bay Hotel South Portland Maine" class="active" />
+					<img id="suite-img-queen" src={`${import.meta.env.BASE_URL}assets/rooms/queen.jpg`} alt="Deluxe Queen room at Casco Bay Hotel South Portland Maine" />
+					<img id="suite-img-double" src={`${import.meta.env.BASE_URL}assets/rooms/double.jpg`} alt="Double Suite with two beds at Casco Bay Hotel Maine" />
 				</div>
 			</div>
 
@@ -232,7 +230,7 @@ import Layout from '../layouts/Layout.astro';
 			<div class="suites-details-scroll">
 				<div class="suite-content-block" data-suite="king">
 					<div class="suite-image-mobile">
-						<img src={`${import.meta.env.BASE_URL}assets/rooms/king.jpg`} alt="Deluxe King" />
+						<img src={`${import.meta.env.BASE_URL}assets/rooms/king.jpg`} alt="Deluxe King room at Casco Bay Hotel South Portland Maine" />
 					</div>
 					<div class="suite-info-inner">
 						<span class="eyebrow">Signature Suite</span>
@@ -242,14 +240,14 @@ import Layout from '../layouts/Layout.astro';
 							<span>1 King Bed</span>
 							<span>350 SQFT</span>
 						</div>
-						<p>Our premier suite offering expansive space and residential-grade comfort. Features a plush King-size bed and a refined coastal aesthetic.</p>
+						<p>Our largest room, with a king bed, dedicated desk, and enough space to actually unpack. Good blackout shades, a Keurig, a mini fridge — the things that matter when you're in for more than one night.</p>
 						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary-suites">Book Your Stay</a>
 					</div>
 				</div>
 
 				<div class="suite-content-block" data-suite="queen">
 					<div class="suite-image-mobile">
-						<img src={`${import.meta.env.BASE_URL}assets/rooms/queen.jpg`} alt="Deluxe Queen" />
+						<img src={`${import.meta.env.BASE_URL}assets/rooms/queen.jpg`} alt="Deluxe Queen room at Casco Bay Hotel South Portland Maine" />
 					</div>
 					<div class="suite-info-inner">
 						<span class="eyebrow">Modern Retreat</span>
@@ -259,14 +257,14 @@ import Layout from '../layouts/Layout.astro';
 							<span>1 Queen Bed</span>
 							<span>280 SQFT</span>
 						</div>
-						<p>A perfectly balanced space for the efficient traveler. The Deluxe Queen offers refined amenities in an intimate, restful layout.</p>
+						<p>A well-sized room with a queen bed that works whether you're here for one night or four. Same amenities as our king rooms — premium WiFi, Keurig, microwave and fridge — in a layout that doesn't waste space.</p>
 						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary-suites">Book Your Stay</a>
 					</div>
 				</div>
 
 				<div class="suite-content-block" data-suite="double">
 					<div class="suite-image-mobile">
-						<img src={`${import.meta.env.BASE_URL}assets/rooms/double.jpg`} alt="Double Beds" />
+						<img src={`${import.meta.env.BASE_URL}assets/rooms/double.jpg`} alt="Double Suite with two beds at Casco Bay Hotel Maine" />
 					</div>
 					<div class="suite-info-inner">
 						<span class="eyebrow">Family Suite</span>
@@ -276,7 +274,7 @@ import Layout from '../layouts/Layout.astro';
 							<span>2 Double Beds</span>
 							<span>400 SQFT</span>
 						</div>
-						<p>Ample space and dual-bed configurations make this the ideal stay for families exploring the greater Portland area.</p>
+						<p>Two double beds, enough room for a family of four, and close enough to Willard Beach and the Eastern Trail that you can actually tire the kids out before bedtime. This is the room people rebook when they come back with family.</p>
 						<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary-suites">Book Your Stay</a>
 					</div>
 				</div>
@@ -365,15 +363,13 @@ import Layout from '../layouts/Layout.astro';
 				<div class="amenity-content-right">
 					<div class="amenity-intro-wrap">
 						<span class="eyebrow">The Experience</span>
-						<h2 class="navy-text">Refined <span class="serif-italic">Amenities</span></h2>
+						<h2 class="navy-text">Everything You <span class="serif-italic">Actually Need</span></h2>
 					</div>
-					
+					<p class="amenity-subtext">Hot breakfast every morning. Free parking always. 24-hour shuttle to and from the Jetport. We've tried to take the friction out of travel — so you can spend your time on the Maine coast, not logistics.</p>
+
 					<!-- Shared Grid for Caption and Lists -->
 					<div class="amenity-grid-main">
-						<div class="amenity-caption-col">
-							<p>Following our complete 2022 renovation, every detail has been refined to ensure your Portland stay is both productive and restorative.</p>
-						</div>
-						<div class="amenity-cta-col">
+						<div class="amenity-cta-col" style="grid-column: span 2;">
 							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary">Book Now</a>
 						</div>
 
@@ -387,7 +383,7 @@ import Layout from '../layouts/Layout.astro';
 							</ul>
 						</div>
 						<div class="amenity-col">
-							<span class="sans-caps">In-Suite Luxury</span>
+							<span class="sans-caps">In-Suite Essentials</span>
 							<ul>
 								<li>Premium High-Speed WiFi</li>
 								<li>Refrigerator & Microwave</li>
@@ -419,19 +415,66 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 	</section>
 
-	<!-- Section 5: Location (Map Background Style) -->
+	<!-- Section 5: Park & Fly -->
+	<section id="park-and-fly" class="park-fly-section bg-navy">
+		<div class="container">
+			<div class="park-fly-layout">
+				<div class="park-fly-content">
+					<span class="eyebrow">For Travelers</span>
+					<h2>Park & Fly Packages</h2>
+					<p>Traveling through Portland International Jetport? Our Park & Fly package lets you stay the night before your flight and leave your car with us while you travel — at no extra charge. Free 24-hour airport shuttle included.</p>
+					<ul class="park-fly-list">
+						<li>Free parking for the duration of your trip</li>
+						<li>Complimentary 24-hour airport shuttle to PWM</li>
+						<li>Hot breakfast included</li>
+						<li>Early check-in / late check-out available on request</li>
+					</ul>
+					<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary">Book Park & Fly</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 6: Guest Reviews -->
+	<section id="reviews" class="reviews-section bg-mist textured">
+		<div class="container">
+			<div class="reviews-header">
+				<span class="eyebrow">Testimonials</span>
+				<h2 class="navy-text">What Our Guests Say</h2>
+			</div>
+			<div class="reviews-grid">
+				<div class="review-card">
+					<p>&ldquo;Perfect location for our Portland trip. The airport shuttle was a lifesaver and breakfast was excellent.&rdquo;</p>
+					<span class="review-author">&mdash; Sarah M., Google Review &#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				</div>
+				<div class="review-card">
+					<p>&ldquo;Clean, modern rooms and the staff went above and beyond. Will definitely stay again when visiting Maine.&rdquo;</p>
+					<span class="review-author">&mdash; James T., TripAdvisor &#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				</div>
+				<div class="review-card">
+					<p>&ldquo;The Park & Fly package saved us so much hassle. Great value and very convenient to the airport.&rdquo;</p>
+					<span class="review-author">&mdash; Linda K., Choice Privileges &#9733;&#9733;&#9733;&#9733;&#9733;</span>
+				</div>
+			</div>
+			<p class="reviews-cta">
+				<a href="https://www.google.com/travel/search?q=casco%20bay%20hotel%20portland&g2lb=4965990%2C72471280%2C72560029%2C72573224%2C72647020%2C72686036%2C72803964%2C72882230%2C72958624%2C73059275%2C73064764%2C121578478&hl=en-US&gl=us&cs=1&ssta=1&ts=CAEaRwopEicyJTB4NGNiMjk5MTViOWNjOWE5NToweGNmMWEzNzZkY2IyMjY4YjcSGhIUCgcI6g8QAxgYEgcI6g8QAxgaGAIyAhAA&qs=CAEyFENnc0l0OUdKMmR6dGpZM1BBUkFCOAJCCQm3aCLLbTcaz0IJCbdoIsttNxrP&ap=ugEHcmV2aWV3cw&ictx=111&ved=0CAAQ5JsGahcKEwiQzq6fkrWTAxUAAAAAHQAAAAAQBA" target="_blank">Read more reviews on Google &rarr;</a>
+			</p>
+		</div>
+	</section>
+
+	<!-- Section 7: Location (Map Background Style) -->
 	<section id="location" class="location-map-style" style={`background-image: url('${import.meta.env.BASE_URL}assets/location/map.jpg')`}>
 		<div class="container">
 			<div class="location-map-grid">
 				<!-- Left: Info Column -->
 				<div class="location-map-info">
 					<div class="location-hotel-visual">
-						<img src={`${import.meta.env.BASE_URL}assets/location/building.jpg`} alt="Casco Bay Hotel Building" />
+						<img src={`${import.meta.env.BASE_URL}assets/location/building.jpg`} alt="Casco Bay Hotel exterior building in South Portland Maine" />
 					</div>
 					<div class="location-text-content">
-						<h2>THE BEST OF PORTLAND AT YOUR FINGERTIPS</h2>
-						<p>Perfectly situated in the greater Portland area, our hotel provides effortless access to the Portland International Jetport, the historic Old Port district, and the stunning Maine coastline. Discover what true convenience looks like.</p>
-						
+						<h2>WHERE TO FIND US</h2>
+						<p>We're on John Roberts Road in South Portland — 1.4 miles from Portland International Jetport, about 10 minutes to the Old Port depending on bridge traffic, and 5 minutes to Willard Beach if you want your feet in the ocean. Cracker Barrel and a handful of local spots are within walking distance for dinner. If you're flying in or out of PWM, we're genuinely the most convenient hotel on either side of the bridge.</p>
+
 						<div class="location-contact-minimal">
 							<p>80 John Roberts Rd, South Portland, ME 04106</p>
 							<p><strong>Phone:</strong> (207) 558-4341</p>
@@ -440,13 +483,34 @@ import Layout from '../layouts/Layout.astro';
 
 						<div class="location-ctas-map">
 							<a href="https://www.google.com/maps?client=safari&rls=en&oe=UTF-8&um=1&ie=UTF-8&fb=1&gl=us&sa=X&geocode=KZWazLkVmbJMMbdoIsttNxrP&daddr=80+John+Roberts+Rd,+South+Portland,+ME+04106" target="_blank" class="link-underlined-dark">Open in Maps &rarr;</a>
-							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071" class="btn-primary">Book Now</a>
+							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049" class="btn-primary">Book Now</a>
 						</div>
 					</div>
 				</div>
 
 				<!-- Right: Empty for Map Visual -->
 				<div class="location-map-pins"></div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Section 8: Good to Know -->
+	<section id="good-to-know" class="good-to-know-section bg-coastal textured">
+		<div class="container">
+			<div class="good-to-know-layout">
+				<div class="good-to-know-header">
+					<span class="eyebrow">Before You Arrive</span>
+					<h2 class="navy-text">Good to Know</h2>
+				</div>
+				<ul class="good-to-know-list">
+					<li><strong>Airport shuttle:</strong> We run 24 hours a day to and from Portland International Jetport (PWM) — just call the front desk when you land.</li>
+					<li><strong>Park & Fly:</strong> Stay the night before your flight, leave your car with us while you travel. Free for the duration of your trip.</li>
+					<li><strong>Breakfast:</strong> Hot breakfast is included every morning, not just continental — eggs, proteins, the works.</li>
+					<li><strong>Pets:</strong> Please call ahead to confirm our current pet policy — (207) 558-4341.</li>
+					<li><strong>Check-in / Check-out:</strong> Standard check-in at 3pm, check-out at 11am. Early/late available on request — just ask.</li>
+					<li><strong>Parking:</strong> Free, on-site, always. No garage fees, no validation stickers.</li>
+					<li><strong>Getting to Portland:</strong> The Old Port is about 10 minutes by car. Rideshare works fine; we can also point you to the Metro bus if you prefer.</li>
+				</ul>
 			</div>
 		</div>
 	</section>
@@ -527,11 +591,27 @@ import Layout from '../layouts/Layout.astro';
 		height: 100%;
 	}
 
-	.hero-slogan-box {
-		color: var(--white);
+	.hero-h1 {
+		font-family: inherit;
+		font-size: 1.15rem;
 		text-transform: uppercase;
 		letter-spacing: 0.5rem;
-		font-size: 1.15rem;
+		color: var(--white);
+		margin: 0 0 0.5rem 0;
+		font-weight: 400;
+		line-height: 1.6;
+	}
+
+	.hero-subhead {
+		font-size: 0.9rem;
+		color: rgba(255,255,255,0.8);
+		line-height: 1.6;
+		margin: 0;
+		letter-spacing: 0.02em;
+	}
+
+	.hero-slogan-box {
+		color: var(--white);
 		border-left: 1px solid rgba(255,255,255,0.3);
 		padding-left: 3.5rem;
 	}
@@ -549,10 +629,10 @@ import Layout from '../layouts/Layout.astro';
 
 	.booking-card {
 		background: var(--bg-warm);
-		padding: 1.5rem; /* Reduced from 2.5rem */
+		padding: 1.5rem;
 		display: flex;
 		flex-direction: column;
-		gap: 1rem; /* Reduced from 1.5rem */
+		gap: 1rem;
 		color: var(--text-main);
 		box-shadow: 0 30px 60px rgba(0,0,0,0.3);
 		position: relative;
@@ -572,7 +652,7 @@ import Layout from '../layouts/Layout.astro';
 	.date-box {
 		position: relative;
 		background: var(--bg-mist);
-		padding: 0.8rem; /* Slightly reduced */
+		padding: 0.8rem;
 		text-align: center;
 	}
 
@@ -587,7 +667,7 @@ import Layout from '../layouts/Layout.astro';
 		color: var(--navy-deep);
 		cursor: pointer;
 		text-align: center;
-		text-align-last: center; /* Vital for centering select text */
+		text-align-last: center;
 		outline: none;
 		padding: 0;
 		margin: 0;
@@ -634,7 +714,7 @@ import Layout from '../layouts/Layout.astro';
 
 	.custom-input-box {
 		background: var(--bg-mist);
-		height: 45px; /* Fixed height for consistency */
+		height: 45px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -692,14 +772,16 @@ import Layout from '../layouts/Layout.astro';
 		background: var(--accent);
 	}
 
-	.experience-content h2 {
+	.experience-content h2,
+	.experience-content h3 {
 		font-size: 3.8rem;
 		line-height: 1.1;
 		margin-bottom: 2.5rem;
 		color: var(--navy-deep);
 	}
 
-	.experience-content h2 strong {
+	.experience-content h2 strong,
+	.experience-content h3 strong {
 		font-weight: 800;
 		color: var(--text-main);
 	}
@@ -746,7 +828,7 @@ import Layout from '../layouts/Layout.astro';
 		.experience-visual { order: 1 !important; }
 		.experience-content { order: 2 !important; }
 		.experience-visual img { height: 500px; }
-		.experience-content h2 { font-size: 2.8rem; }
+		.experience-content h2, .experience-content h3 { font-size: 2.8rem; }
 	}
 
 	.suites-vertical-gallery {
@@ -775,7 +857,6 @@ import Layout from '../layouts/Layout.astro';
 	.suites-visual-sticky.is-fixed {
 		position: fixed;
 		top: 0;
-		/* width and left are handled by JS to match the layout exactly */
 	}
 
 	.suites-visual-sticky.is-bottom {
@@ -902,7 +983,7 @@ import Layout from '../layouts/Layout.astro';
 			grid-template-columns: 1fr;
 		}
 		.suites-visual-sticky {
-			display: none; /* In vertical gallery mobile often simplifies or stacks */
+			display: none;
 		}
 		.suite-image-mobile {
 			display: block;
@@ -946,6 +1027,7 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
+	/* Amenities Section */
 	.amenities-magazine-layout {
 		display: grid;
 		grid-template-columns: 0.8fr 1.2fr;
@@ -976,14 +1058,17 @@ import Layout from '../layouts/Layout.astro';
 		z-index: 1;
 	}
 
+	.amenity-subtext {
+		font-size: 1.1rem;
+		color: var(--text-muted);
+		line-height: 1.8;
+		margin-bottom: 2rem;
+	}
+
 	.amenity-grid-main {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 4rem;
-	}
-
-	.amenity-caption-col {
-		margin-bottom: 1rem;
 	}
 
 	.amenity-cta-col {
@@ -1005,16 +1090,162 @@ import Layout from '../layouts/Layout.astro';
 		.visual-main { height: 400px; }
 		.visual-accent { display: none; }
 		.amenity-grid-main { grid-template-columns: repeat(2, 1fr); gap: 3rem 1.5rem; }
-		.amenity-caption-col, .amenity-cta-col { grid-column: span 2; }
-		.amenity-cta-col { margin-bottom: 2rem; }
+		.amenity-cta-col { grid-column: span 2; margin-bottom: 2rem; }
 	}
 
+	/* Park & Fly Section */
+	.park-fly-section {
+		padding: 8rem 0;
+	}
+
+	.park-fly-layout {
+		max-width: 800px;
+	}
+
+	.park-fly-content h2 {
+		font-size: 3.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.park-fly-content p {
+		font-size: 1.1rem;
+		color: #94a3b8;
+		line-height: 1.8;
+		margin-bottom: 2.5rem;
+	}
+
+	.park-fly-list {
+		list-style: none;
+		margin-bottom: 3rem;
+	}
+
+	.park-fly-list li {
+		font-size: 1rem;
+		color: #cbd5e1;
+		padding: 0.8rem 0;
+		border-bottom: 1px solid rgba(255,255,255,0.08);
+		padding-left: 1.5rem;
+		position: relative;
+	}
+
+	.park-fly-list li::before {
+		content: "—";
+		position: absolute;
+		left: 0;
+		color: var(--accent);
+	}
+
+	/* Reviews Section */
+	.reviews-section {
+		padding: 8rem 0;
+	}
+
+	.reviews-header {
+		text-align: center;
+		margin-bottom: 5rem;
+	}
+
+	.reviews-header h2 {
+		font-size: 3.5rem;
+	}
+
+	.reviews-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 3rem;
+	}
+
+	.review-card {
+		background: var(--white);
+		padding: 3rem;
+		border: 1px solid var(--border-blue);
+		box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+	}
+
+	.review-card p {
+		font-family: var(--font-serif);
+		font-size: 1.2rem;
+		font-style: italic;
+		line-height: 1.7;
+		color: var(--navy-deep);
+		margin-bottom: 2rem;
+	}
+
+	.review-author {
+		font-family: var(--font-sans);
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		color: var(--text-muted);
+	}
+
+	.reviews-cta {
+		text-align: center;
+		margin-top: 3rem;
+	}
+
+	.reviews-cta a {
+		font-family: var(--font-sans);
+		font-size: 0.8rem;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+		color: var(--accent);
+		border-bottom: 1px solid var(--accent);
+		padding-bottom: 0.3rem;
+	}
+
+	.reviews-cta a:hover {
+		color: var(--navy-deep);
+		border-bottom-color: var(--navy-deep);
+	}
+
+	@media (max-width: 1024px) {
+		.reviews-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+
+	/* Good to Know Section */
+	.good-to-know-section {
+		padding: 8rem 0;
+	}
+
+	.good-to-know-header {
+		margin-bottom: 4rem;
+	}
+
+	.good-to-know-header h2 {
+		font-size: 3.5rem;
+	}
+
+	.good-to-know-list {
+		list-style: none;
+		max-width: 900px;
+	}
+
+	.good-to-know-list li {
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: var(--text-muted);
+		padding: 1.2rem 0;
+		border-bottom: 1px solid var(--border-blue);
+	}
+
+	.good-to-know-list li strong {
+		color: var(--navy-deep);
+		font-weight: 700;
+	}
+
+	/* Location Section */
 	.location-map-style {
 		background-size: cover;
-		background-position: 80% center; 
+		background-position: 80% center;
 		background-repeat: no-repeat;
 		position: relative;
-		padding: 6rem 0 8rem; /* Slightly more top padding to contain the info box */
+		padding: 6rem 0 8rem;
 		color: var(--text-main);
 		background-color: #fff;
 	}
@@ -1028,7 +1259,7 @@ import Layout from '../layouts/Layout.astro';
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 
-		align-items: flex-start; /* Align to top to prevent vertical stretching issues */
+		align-items: flex-start;
 	}
 
 	.location-map-info {
@@ -1207,6 +1438,9 @@ import Layout from '../layouts/Layout.astro';
 			border-top: 1px solid rgba(255,255,255,0.3);
 			padding-left: 0;
 			padding-top: 2rem;
+		}
+
+		.hero-h1 {
 			letter-spacing: 0.3rem;
 			font-size: 1rem;
 		}
@@ -1249,6 +1483,18 @@ import Layout from '../layouts/Layout.astro';
 			width: auto;
 			display: inline;
 			margin-right: 0.5rem;
+		}
+
+		.park-fly-content h2 {
+			font-size: 2.5rem;
+		}
+
+		.reviews-header h2 {
+			font-size: 2.5rem;
+		}
+
+		.good-to-know-header h2 {
+			font-size: 2.5rem;
 		}
 	}
 

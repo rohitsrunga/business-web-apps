@@ -18,6 +18,8 @@ import '../styles/global.css';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 		<!-- Fonts -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +30,7 @@ import '../styles/global.css';
 			<div class="header-container">
 				<div class="header-left">
 					<nav class="main-nav left-nav">
-						<a href="/business-web-apps/rooms">Rooms</a>
+						<a href={isHome ? "#rooms" : "/business-web-apps/#rooms"}>Rooms</a>
 						<a href={isHome ? "#amenities" : "/business-web-apps/#amenities"}>Experience</a>
 					</nav>
 				</div>
@@ -92,7 +94,7 @@ import '../styles/global.css';
 						<div class="footer-nav-col">
 							<h4>Stay</h4>
 							<a href="#rooms">Rooms</a>
-							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me071">Reservations</a>
+							<a href="https://www.choicehotels.com/maine/south-portland/ascend-hotels/me049">Reservations</a>
 						</div>
 					</nav>
 				</div>
